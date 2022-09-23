@@ -17,7 +17,7 @@ class CalenderSpider < Kimurai::Base
       hash_array[:teaser] = inner_details.css("div.teaser-search__text").text.squish           
       hash_array[:day] = response.css("span.nopr")[i].text.squish rescue nil
       hash_array[:date] = response.css("span.nopr")[i].text.squish rescue nil
-      hash_array[:secondtype] = "visitevent"
+      hash_array[:websource] = "visitevent"
       i = i + 1
       j = j + 2
       Event.where(hash_array).first_or_create

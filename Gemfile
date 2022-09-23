@@ -80,13 +80,21 @@ gem 'sass-rails'
 
 # Plus integrations with:
 gem 'devise'
+
 gem 'cancancan'
+
 gem 'draper'
+
 gem 'pundit'
+
 gem 'whenever', require: false
 
 gem 'sidekiq'
 
-gem 'redis', '~> 4.0'
 gem 'letter_opener'
-gem install sidekiq-scheduler
+
+gem 'sidekiq-scheduler'
+
+gem 'redis-rails'
+
+
