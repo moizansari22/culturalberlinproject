@@ -1,14 +1,10 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
-  end
-
-  def berlins_show
-    @events = Event.where(websource: "berlinevent")
-  end
-
-  def calenders_show
-    @events = Event.where(websource: "visitevent")
+    if params[:websource].present?
+      @events = Event.where("websource LIKE ?", params[:websource]).paginate(:page => params[:page], :per_page => 10)
+    else
+      @events = Event.all.paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   def search_date
