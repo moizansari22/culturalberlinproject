@@ -19,7 +19,7 @@ class BerlinSpider < Kimurai::Base
       hash_array[:day] = date_details[0]
       hash_array[:date] = date_details[1]
       hash_array[:start_time] = date_details[3]
-      hash_array[:secondtype] = "berlinevent"
+      hash_array[:websource] = "berlinevent"
       Event.where(hash_array).first_or_create
     end
   end
