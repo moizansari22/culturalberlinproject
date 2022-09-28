@@ -89,4 +89,10 @@ gem 'sidekiq'
 
 gem 'redis', '~> 4.0'
 gem 'letter_opener'
-gem install sidekiq-scheduler
+gem 'sidekiq-scheduler'
+gem 'redis-rails'
+gem 'rspec'
+group :development, :test do
+  gem 'rspec-rails'
+end
+gem 'rails-controller-testing'

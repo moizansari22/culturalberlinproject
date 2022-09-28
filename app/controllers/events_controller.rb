@@ -1,29 +1,10 @@
 class EventsController < ApplicationController
   
   def index
-    @events = Event.all
-  end
-  def create_random
-    ScrapeRandomWebsiteJob.perform_later
-  end
-  def berlin_website
-    array = [
-      'https://www.berghain.berlin/en/program/',
-      'https://www.berghain.berlin/en/program/kantine-am-berghain/',
-      'https://www.berghain.berlin/en/program/halle/',
-      'https://www.berghain.berlin/en/program/archive/'
-    ]
-    array.each do |url|
-      response = BerlinSpider.process(url)
-    end
-  end
-  def calender_website
-    i = 0
-    total_pages = 20
-    while i < total_pages
-      url = "https://www.visitberlin.de/en/event-calendar-berlin?page=#{i}/"
-      response = CalenderSpider.process(url)
-      i+= 1
+    if params[:websource].present?
+      @events = Event.where("websource LIKE ?", params[:websource])
+    else
+      @events = Event.all
     end
   end
   # GET /events/1 or /events/1.json
