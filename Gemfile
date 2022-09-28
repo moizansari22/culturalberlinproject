@@ -72,22 +72,16 @@ group :test do
 end
 gem 'bootstrap'
 gem 'kimurai'
-
 gem 'activeadmin', github: 'activeadmin/activeadmin', branch: 'master' # FIXME: revert to stable
-
 # Required for ActiveAdmin
 gem 'sass-rails'
-
 # Plus integrations with:
 gem 'devise'
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
 gem 'whenever', require: false
-
 gem 'sidekiq'
-
-gem 'redis', '~> 4.0'
 gem 'letter_opener'
 gem 'sidekiq-scheduler'
 gem 'redis-rails'

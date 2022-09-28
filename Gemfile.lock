@@ -454,7 +454,6 @@ DEPENDENCIES
   pundit
   rails (~> 7.0.4)
   rails-controller-testing
-  redis (~> 4.0)
   redis-rails
   rspec
   rspec-rails

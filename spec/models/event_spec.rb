@@ -1,14 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Event, type: :model do
-  subject {
-    Event.new(title: "Anything",
-                        teaser: "Lorem ipsum",
-                        bar: "Panorama Bar",
-                        day: "Friday",
-                        date: "30.09.2022",
-                        websource: "berlinevent")
-  }
+  subject {Event.new(title: "Anything",teaser: "Lorem ipsum",bar: "Panorama Bar",day: "Friday",date: "30.09.2022",websource: ["berlinevent","visitevent"])}
 
   it "has none to begin with" do
     expect(Event.count).to eq (0)
@@ -33,8 +26,13 @@ RSpec.describe Event, type: :model do
     expect(subject).to be_valid
   end
 
-  it "is valid with two websource" do
-    subject.websource = ["berlinevent","visitevent"]
+  it "is valid without a day" do
+    subject.day = nil
     expect(subject).to be_valid
+  end
+
+  it "is not valid without websource" do
+    subject.websource = nil
+    expect(subject).to_not be_valid
   end
 end
