@@ -1,5 +1,4 @@
 require "rails_helper"
-
 RSpec.describe ScrappingJob, :type => :job do
   describe "perform_later" do
     it "having job enqueued" do
