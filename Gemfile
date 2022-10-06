@@ -86,8 +86,6 @@ gem 'letter_opener'
 gem 'sidekiq-scheduler'
 gem 'redis-rails'
 gem 'rspec'
-group :development, :test do
-  gem 'rspec-rails'
-end
 gem 'rails-controller-testing'
 gem 'will_paginate'
+gem 'grape'
