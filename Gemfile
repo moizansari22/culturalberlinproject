@@ -91,5 +91,3 @@ group :development, :test do
 end
 gem 'rails-controller-testing'
 gem 'will_paginate'
-gem 'grape'
-gem 'grape_on_rails_routes'
